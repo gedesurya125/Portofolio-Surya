@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@keyframes glow{
+  50% {
+    text-shadow: 0px 0px 20px white;
+  }
+}
+
+@keyframes showHidden {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
+
+@keyframes scaleUp{
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.2);
+  }
+}
+
+@keyframes scaleDown {
+  from{
+    transform: scale(1.2);
+  }
+  to{
+    transform: scale(1);
+  }
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+a{
+  text-decoration: none;
+}
+
+header{
+  position: sticky;
+  background: linear-gradient(90deg, hsl(20, 50%,50%),hsl(50, 100%,10%));
+  text-align: right;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  box-shadow: 0px 4px 8px black;
+}
+
+header > nav > ul {
+  padding: 1em;
+}
+header > nav > ul > li {
+  display: inline;
+  list-style: none;
+}
+
+
+header > nav > ul > li > a{
+  padding: 1em;
+  color: white;
+  font-weight: bold;
+}
+
+header > nav > ul > li > a:hover {
+  background-color: hsl(20, 50%, 20%);
+}
+
+#welcome-section{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(0deg, hsl(10, 50%, 0%), hsl(40, 50%, 20%))
+}
+
+#welcome-section > h1 {
+  color: white;
+  font-size: 3em;
+  animation: glow 5s infinite;
+  
+}
+
+#welcome-section > p {
+  color: hsl(20, 50%, 50%);
+  font-style: italic;
+}
+
+#projects{
+  background-color: hsl(60, 30%, 60%);
+  padding: 4em 1em 1em 1em;
+}
+#project-header {
+  display: flex;
+}
+#project-header > h1 {
+  margin:1em auto;
+  border-bottom: 1px solid black;
+  font-weight: bolder;
+  font-size: 2em;
+  text-shadow: 0 0 6px white;
+}
+#project-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-tile{
+  display: block;
+  max-width: 400px;
+  height: auto;
+  padding: 1em;
+  background-color: hsl(40, 80%, 10%);
+  margin: 1em;
+  border-radius: 5px;
+  box-shadow: 1px 2px 7px black, 2px 1px 7px black;
+    
+}
+
+.project-tile > p::before {
+  content: "< ";
+  color: hsl(0, 50%, 70%);
+  font-weight: bold;
+  animation: hide 1s forwards;
+  
+}
+.project-tile > p::after {
+  content: " />";
+  color: hsl(0, 50%, 70%);
+  font-weight: bold;
+  animation: hide 1s forwards;
+}
+
+.project-tile:hover > p::before, .project-tile:hover > p::after{
+  animation-name: showHidden;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+#project-body > a > img{
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+#project-body > a > p {
+  color: white;
+  text-align: center;
+  margin-top: 1em;
+}
+
+#contact{
+  --title-color: hsl(20, 50%, 50%);
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 4fr 1fr;
+  align-items: center;
+  background: linear-gradient(0deg, hsl(200, 50%, 70%), hsl(240, 50%,70%));
+  padding-top: 4em;
+  
+}
+
+
+#social > h1{
+  color: var(--title-color);
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+}
+#social > p {
+  font-style: italic;
+  color: var(--title-color);
+  text-align: center;
+}
+#social > ul {
+  margin-top: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#social > ul > li{
+  list-style: none;
+  margin:1em;
+  text-align: center;
+  text-shadow: 0 0 8px white;
+  transform: scale(1);
+  transition: all 0.5s;
+}
+
+#social > ul > li:hover {
+  transform: scale(1.2);
+}
+#social > ul > li > a {
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+#social > ul > li > a > img {
+  height: 50px;
+}
+
+#social > ul > li > a > p {
+  font-weight: bold;
+  color: hsl(200, 50%, 10%);
+}
+
+#footer{
+  border-top: 3px solid hsl(20, 50%, 50%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+#footer > *  {
+  text-align: center;
+  
+}
+#footer > q{
+  font-size: 2em;
+  font-style: italic;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 1000px){
+  #project-body{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
