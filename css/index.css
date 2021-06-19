@@ -48,18 +48,29 @@
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
+html{
+  scroll-behavior: smooth;
+}
 a{
   text-decoration: none;
 }
 
 header{
   position: sticky;
-  background: linear-gradient(90deg, hsl(20, 50%,50%),hsl(50, 100%,10%));
   text-align: right;
   position: fixed;
   top: 0px;
   width: 100%;
+  z-index: 10;
+  
+  transition: all .2s linear;
+}
+
+header.show{
+  background: hsla(20, 50%,50%, 1);
   box-shadow: 0px 4px 8px black;
+
+
 }
 
 header > span{
