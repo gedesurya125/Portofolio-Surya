@@ -1,5 +1,5 @@
 AOS.init();
-$(document).ready(function () {
+$().ready(function () {
   $(window).scroll(function (event) {
     let scroll = this.scrollY;
     if(scroll > $("header").height()){
