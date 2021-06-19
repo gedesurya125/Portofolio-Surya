@@ -179,6 +179,18 @@ header > nav > ul > li > a:hover {
     
 }
 
+.project-tile > img{
+ transition: all 0.5s linear;
+}
+.project-tile:nth-child(even):hover > img{
+  transform: rotate(1deg) scale(1.1);
+  transition: all 0.5s linear;
+}
+.project-tile:nth-child(odd):hover > img{
+  transform: rotate(-1deg) scale(1.1);
+  transition: all 0.5s linear;
+}
+
 .project-tile > p::before {
   content: "< ";
   color: hsl(0, 50%, 70%);
