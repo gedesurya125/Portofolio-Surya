@@ -114,9 +114,9 @@ header > nav > ul > li > a:hover {
 
 #welcome-section{
   height: 100vh;
-  box-shadow: inset 3px 3px 10px black;
   -moz-box-shadow: inset 3px 3px 10px black;
   -webkit-box-shadow: inset 3px 3px 10px black;
+  box-shadow: inset 3px 3px 10px black;
   
   display: flex;
   align-items: center;
@@ -127,14 +127,14 @@ header > nav > ul > li > a:hover {
 }
 
 #welcome-section.posTop{
-  border-radius: 500px 0 0 0;
+  -border-radius: 500px 0 0 0;
   
 }
 #welcome-section.full{
   border-radius: 0 ;
-  box-shadow: 0;
-  -moz-box-shadow: 0;
   -webkit-box-shadow: 0;
+  -moz-box-shadow: 0;
+  box-shadow: 0;
   
   transition: all 1s linear;
 }
