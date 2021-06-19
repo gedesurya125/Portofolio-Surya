@@ -4,15 +4,16 @@ $().ready(function () {
     let scroll = this.scrollY;
     if(scroll > $("header").height()){
       $("header").addClass("show");
-      console.log('more than height');
+      $("#welcome-section").addClass("full")
+      $("header > span, header > span > img").addClass("minimize");
     }else{
       $("header").removeClass("show");
+      $("#welcome-section").removeClass("full");
+      $("header > span, header > span > img").removeClass("minimize");
+
+
     }
-    console.log(
-      'this is project',
-      $('#project-tile').scrollTop()
-      
-    )
+
   });
 
 //fade project

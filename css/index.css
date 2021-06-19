@@ -51,6 +51,10 @@
 html{
   scroll-behavior: smooth;
 }
+body{
+  background-color: hsl(40, 50%, 70%);
+}
+
 a{
   text-decoration: none;
 }
@@ -62,7 +66,6 @@ header{
   top: 0px;
   width: 100%;
   z-index: 10;
-  
   transition: all .2s linear;
 }
 
@@ -75,9 +78,20 @@ header.show{
 
 header > span{
   float: left;
-  padding:16px;
-  font-weight: bold;
-  color:white;
+  margin: 15px;
+  transition: all .2s linear;
+}
+header > span.minimize{
+  margin: 2px;
+}
+header > span > img{
+  width: 150px;
+  height: auto;
+  transition: all .2s linear;
+
+}
+header > span > img.minimize {
+  width: 70px;
 }
 header > nav > ul {
   padding: 1em;
@@ -100,11 +114,29 @@ header > nav > ul > li > a:hover {
 
 #welcome-section{
   height: 100vh;
+  box-shadow: inset 3px 3px 10px black;
+  -moz-box-shadow: inset 3px 3px 10px black;
+  -webkit-box-shadow: inset 3px 3px 10px black;
+  
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: linear-gradient(0deg, hsl(10, 50%, 0%), hsl(40, 50%, 20%))
+  background: linear-gradient(0deg, hsl(10, 50%, 0%), hsl(40, 50%, 20%));
+  transition: all 0.2s linear;
+}
+
+#welcome-section.posTop{
+  border-radius: 500px 0 0 0;
+  
+}
+#welcome-section.full{
+  border-radius: 0 ;
+  box-shadow: 0;
+  -moz-box-shadow: 0;
+  -webkit-box-shadow: 0;
+  
+  transition: all 1s linear;
 }
 
 #welcome-section > h1 {
