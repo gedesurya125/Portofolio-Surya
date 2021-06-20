@@ -48,6 +48,8 @@
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
+
+
 html{
   scroll-behavior: smooth;
 }
@@ -83,9 +85,11 @@ header > span{
 }
 header > span.minimize{
   margin: 2px;
+  position: absolute;
+  left: 1px;
 }
 header > span > img{
-  width: 150px;
+  width: 100px;
   height: auto;
   transition: all .2s linear;
 
@@ -93,16 +97,23 @@ header > span > img{
 header > span > img.minimize {
   width: 70px;
 }
+header > nav {
+  max-height: 5px;
+  overflow: hidden;
+  transition: all .5s ease;
+}
 header > nav > ul {
   padding: 1em;
+  display: block;
 }
 header > nav > ul > li {
-  display: inline;
+  display: block;
   list-style: none;
 }
 
 
 header > nav > ul > li > a{
+  display: block;
   padding: 1em;
   color: white;
   font-weight: bold;
@@ -111,6 +122,31 @@ header > nav > ul > li > a{
 header > nav > ul > li > a:hover {
   background-color: hsl(20, 50%, 20%);
 }
+
+header > .menu-icon {
+  color: white;
+  margin-top: 10px;
+  margin-right: 15px;
+  display: block;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  overflow: hidden;
+  transition: all 0.5s ease;
+
+
+}
+header > .menu-icon > .icon-group{
+  position: relative;
+  top: 0px;
+  transition: all 0.5s ease;
+
+}
+header > .menu-icon > .icon-group > i {
+  display: block;
+  font-size: 30px;
+}
+
 
 #welcome-section{
   height: 100vh;
@@ -159,6 +195,7 @@ header > nav > ul > li > a:hover {
   font-weight: bolder;
   font-size: 2em;
   text-shadow: 0 0 6px white;
+  text-align: center;
 }
 #project-body{
   display: flex;
@@ -225,12 +262,10 @@ header > nav > ul > li > a:hover {
 #contact{
   --title-color: hsl(20, 50%, 50%);
   width: 100%;
-  height: 100vh;
   display: grid;
-  grid-template-rows: 4fr 1fr;
+  grid-template-rows: 2fr 1fr;
   align-items: center;
   background: linear-gradient(0deg, hsl(200, 50%, 70%), hsl(240, 50%,70%));
-  padding-top: 4em;
   
 }
 
@@ -298,10 +333,4 @@ header > nav > ul > li > a:hover {
   margin-bottom: 1em;
 }
 
-@media (min-width: 1000px){
-  #project-body{
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
 
