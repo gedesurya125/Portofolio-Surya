@@ -19,11 +19,23 @@ $().ready(function () {
 let contact = document.getElementById("contact");
 //console.log(contact.getBoundingClientRect().top, contact.scrollLeft);
 });
+
+const menuIcon = document.querySelector(".icon-group");
+const navBar = document.querySelector("#navbar");
+
+const allSections = document.querySelectorAll('section')
+
+for(let i = 0; i < allSections.length; i++){
+  allSections[i]
+  .addEventListener('click',function() {
+    if( navBar.style.maxHeight !== "" ){
+      navBar.style.maxHeight = "";
+      menuIcon.style.top ="0px";
+    }
+  });
+}
 function openNavBar(event){
 console.log("i am clicked");
-const menuIcon = document.querySelector(".icon-group");
-
-const navBar = document.querySelector("#navbar");
 if( navBar.style.maxHeight === "" ){
   const navHeight = navBar.scrollHeight;
   navBar.style.maxHeight = navHeight.toString()+'px';
